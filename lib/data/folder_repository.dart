@@ -1,3 +1,5 @@
+// lib/data/folder_repository.dart
+import 'package:sqflite/sqflite.dart' as sqflite;
 import '../models/folder.dart';
 import 'database_helper.dart';
 
@@ -16,7 +18,7 @@ class FolderRepository {
       'SELECT COUNT(*) FROM cards WHERE folderId = ?',
       [folderId],
     );
-    return Sqflite.firstIntValue(r) ?? 0;
+    return sqflite.Sqflite.firstIntValue(r) ?? 0;
   }
 
   Future<void> updatePreview(int folderId, String previewUrl) async {
