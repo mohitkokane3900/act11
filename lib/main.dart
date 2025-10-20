@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
+import 'screens/folders_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const Act10App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Act10App extends StatelessWidget {
+  const Act10App({super.key});
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(body: Center(child: Text('In-Class 10 Setup'))),
+    return MaterialApp(
+      title: 'Act10 Part B',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.indigo),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.indigo,
+        brightness: Brightness.dark,
+      ),
+      home: const FoldersScreen(),
     );
   }
 }
